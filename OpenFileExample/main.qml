@@ -13,6 +13,7 @@ ApplicationWindow {
     title: qsTr("Open file dialog")
 
     property int elementMargin: 5
+    signal setFileName(string str)
 
     FileDialog{
         id: openFileDialog
@@ -22,9 +23,11 @@ ApplicationWindow {
         nameFilters: ["All files (*)"]
         onAccepted: {
             fileNameTextField.text = fileUrl;
+            setFileName(fileNameTextField.text);
         }
         onRejected: {
             fileNameTextField.text = "Canceled";
+            setFileName("");
         }
     }
 
@@ -32,6 +35,7 @@ ApplicationWindow {
         id :fileNameTextField
         width: (parent.width*4)/5 - openFileBtn.anchors.leftMargin - openFileBtn.anchors.rightMargin
                - anchors.leftMargin;
+        height: 20
 
         anchors {
             top: parent.top
@@ -46,6 +50,7 @@ ApplicationWindow {
     Button {
         id: openFileBtn
         width: parent.width/5
+        height: fileNameTextField.height
         anchors {
             top: parent.top
             left: fileNameTextField.right
@@ -67,6 +72,12 @@ ApplicationWindow {
 
         property int tableViewWidth: parent.width - 2*elementMargin
 
+//        headerDelegate: Rectangle {
+//            height: 20
+//            border.color: "black";
+//            color: "transparent";
+//        }
+
         anchors {
             left: parent.left
             right: parent.right
@@ -82,16 +93,23 @@ ApplicationWindow {
             role: "user_id"
             title: "User ID"
             width: tableView.viewport.width/3
+            movable: false
+            resizable: false
+
         }
         OldControls.TableViewColumn {
             role: "user_name"
             title: "User name"
             width: tableView.viewport.width/3
+            movable: false
+            resizable: false
         }
         OldControls.TableViewColumn {
             role: "phone_number"
             title: "Phone number"
             width: tableView.viewport.width/3
+            movable: false
+            resizable: false
         }
 
     }
