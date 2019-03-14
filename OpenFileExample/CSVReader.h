@@ -10,6 +10,7 @@ class CSVReader : public QObject
   explicit CSVReader(QObject *parent = nullptr);
 
   signals:
+  void renameButton();
 
   public slots:
   void parseFileName(QString fileName);

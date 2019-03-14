@@ -21,5 +21,8 @@ int main(int argc, char *argv[])
     QObject::connect(engine.rootObjects().first(),SIGNAL(setFileName(QString)),
                      csvReader, SLOT(parseFileName(QString)));
 
+    QObject::connect(csvReader, SIGNAL(renameButton()),
+                     engine.rootObjects().first(), SLOT(test()));
+
     return app.exec();
 }

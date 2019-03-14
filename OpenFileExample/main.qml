@@ -15,6 +15,10 @@ ApplicationWindow {
     property int elementMargin: 5
     signal setFileName(string str)
 
+    function test() {
+        openFileBtn.text = "Close file";
+    }
+
     FileDialog{
         id: openFileDialog
         title: "Open file"
@@ -62,6 +66,10 @@ ApplicationWindow {
         onClicked: {
             openFileDialog.open();
         }
+
+        background: Rectangle {
+            color: "red"
+        }
     }
 
     OldControls.TableView {
@@ -71,12 +79,6 @@ ApplicationWindow {
         sortIndicatorVisible: true
 
         property int tableViewWidth: parent.width - 2*elementMargin
-
-//        headerDelegate: Rectangle {
-//            height: 20
-//            border.color: "black";
-//            color: "transparent";
-//        }
 
         anchors {
             left: parent.left

@@ -11,4 +11,5 @@ void CSVReader::parseFileName(QString fileName)
   QString str = fileName;
   int i = 0;
   ++i;
+  emit renameButton();
 }
