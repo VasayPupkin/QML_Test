@@ -1,9 +1,12 @@
+//https://doc-snapshots.qt.io/qt5-5.12/qml-qtquick-tableview.html#details
 import QtQuick 2.9
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
 import QtQuick.Controls 1.4 as OldControls
 import QtQuick.Controls 2.2
 import QtQuick.Dialogs 1.2
+
+
 
 ApplicationWindow {
     id: appWindow
