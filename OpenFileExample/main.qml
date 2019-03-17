@@ -1,4 +1,5 @@
 //https://doc-snapshots.qt.io/qt5-5.12/qml-qtquick-tableview.html#details
+//https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html
 import QtQuick 2.9
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
@@ -6,7 +7,7 @@ import QtQuick.Controls 1.4 as OldControls
 import QtQuick.Controls 2.2
 import QtQuick.Dialogs 1.2
 
-
+import TableModel 0.1
 
 ApplicationWindow {
     id: appWindow
@@ -82,6 +83,7 @@ ApplicationWindow {
         sortIndicatorVisible: true
 
         property int tableViewWidth: parent.width - 2*elementMargin
+        clip: true
 
         anchors {
             left: parent.left
@@ -94,28 +96,37 @@ ApplicationWindow {
             bottomMargin: elementMargin
         }
 
-        OldControls.TableViewColumn {
-            role: "user_id"
-            title: "User ID"
-            width: tableView.viewport.width/3
-            movable: false
-            resizable: false
+        model: TableModel {}
+        itemDelegate: Rectangle {
+            implicitWidth: 50
+            implicitHeight: 50
+            Text {
+                text: display
+            }
+        }
 
-        }
-        OldControls.TableViewColumn {
-            role: "user_name"
-            title: "User name"
-            width: tableView.viewport.width/3
-            movable: false
-            resizable: false
-        }
-        OldControls.TableViewColumn {
-            role: "phone_number"
-            title: "Phone number"
-            width: tableView.viewport.width/3
-            movable: false
-            resizable: false
-        }
+//        OldControls.TableViewColumn {
+//            role: "user_id"
+//            title: "User ID"
+//            width: tableView.viewport.width/3
+//            movable: false
+//            resizable: false
+
+//        }
+//        OldControls.TableViewColumn {
+//            role: "user_name"
+//            title: "User name"
+//            width: tableView.viewport.width/3
+//            movable: false
+//            resizable: false
+//        }
+//        OldControls.TableViewColumn {
+//            role: "phone_number"
+//            title: "Phone number"
+//            width: tableView.viewport.width/3
+//            movable: false
+//            resizable: false
+//        }
 
     }
 }
