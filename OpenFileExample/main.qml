@@ -43,7 +43,7 @@ ApplicationWindow {
         id :fileNameTextField
         width: (parent.width*4)/5 - openFileBtn.anchors.leftMargin - openFileBtn.anchors.rightMargin
                - anchors.leftMargin;
-        height: 20
+        height: 40
 
         anchors {
             top: parent.top
