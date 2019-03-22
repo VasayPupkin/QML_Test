@@ -13,7 +13,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 #DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 SOURCES += main.cpp \
-    CSVReader.cc
+    CSVReader.cc \
+#    /media/oleg/c2593705-a894-489d-b565-859702b4a4b4/oleg/KirichekOI/GitHubRepository/KvantProgTest/KvantProgTest/TableModel.cc
 
 RESOURCES += qml.qrc
 
@@ -31,3 +32,4 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 HEADERS += \
     CSVReader.h \
     TableViewModel.h
+#    /media/oleg/c2593705-a894-489d-b565-859702b4a4b4/oleg/KirichekOI/GitHubRepository/KvantProgTest/KvantProgTest/TableModel.h

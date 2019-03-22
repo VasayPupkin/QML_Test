@@ -5,6 +5,7 @@
 #include <QString>
 
 #include "TableViewModel.h"
+//#include "/media/oleg/c2593705-a894-489d-b565-859702b4a4b4/oleg/KirichekOI/GitHubRepository/KvantProgTest/KvantProgTest/TableModel.h"
 
 int main(int argc, char *argv[])
 {

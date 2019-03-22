@@ -1,6 +1,7 @@
 //https://doc-snapshots.qt.io/qt5-5.12/qml-qtquick-tableview.html#details
 //https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html
 //https://andrew-jones.com/blog/qml2-to-c---and-back-again-with-signals-and-slots/ !!!!!
+//https://felgo.com/cross-platform-development/how-to-expose-a-qt-cpp-class-with-signals-and-slots-to-qml
 import QtQuick 2.9
 import QtQuick.Layouts 1.3
 import QtQuick.Window 2.2
